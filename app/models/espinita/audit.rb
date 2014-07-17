@@ -14,7 +14,7 @@ module Espinita
     scope :to_version,    ->(version){where(['version <= ?', version]) }
     scope :auditable_finder, ->(auditable_id, auditable_type){where(auditable_id: auditable_id, auditable_type: auditable_type)}
 
-    serialize :audited_changes
+    # serialize :audited_changes
 
     before_create :set_version_number, :set_audit_user
 
